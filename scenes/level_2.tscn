@@ -1,0 +1,83 @@
+[gd_scene load_steps=8 format=3 uid="uid://6bdcv6nkbdar"]
+
+[ext_resource type="Texture2D" uid="uid://b4a5uvrwi7j60" path="res://arts/background2.png" id="1_qkfm6"]
+[ext_resource type="Script" path="res://scenes/QuitGameButton.cs" id="2_vcldv"]
+[ext_resource type="Script" path="res://scripts/InvisibleRoof.cs" id="3_8vcdh"]
+[ext_resource type="Script" path="res://scripts/InvisibleFloor.cs" id="4_7xv0o"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_8kf21"]
+a = Vector2(7471, 2)
+b = Vector2(-855, 11)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_pw6ct"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_x01y0"]
+a = Vector2(7, 670)
+b = Vector2(1, -325)
+
+[node name="level2" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 19564.0
+offset_bottom = 1080.0
+texture = ExtResource("1_qkfm6")
+stretch_mode = 1
+
+[node name="QuitGameButton" type="Button" parent="Background"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 19.0
+offset_right = 169.0
+offset_bottom = 82.0
+theme_override_font_sizes/font_size = 40
+text = "Quit"
+script = ExtResource("2_vcldv")
+
+[node name="TimeText" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 1299.0
+offset_top = 7.0
+offset_right = 1432.0
+offset_bottom = 76.0
+theme_override_font_sizes/font_size = 50
+text = "Time:"
+
+[node name="ScoreText" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 1577.0
+offset_top = 8.0
+offset_right = 1724.0
+offset_bottom = 77.0
+theme_override_font_sizes/font_size = 50
+text = "Score:"
+
+[node name="InvisibleRoof" type="StaticBody2D" parent="Background"]
+position = Vector2(363, -93)
+script = ExtResource("3_8vcdh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/InvisibleRoof"]
+position = Vector2(856, 202)
+shape = SubResource("SegmentShape2D_8kf21")
+debug_color = Color(0.760715, 0.30367, 0.837987, 0.42)
+
+[node name="InvisibleFloor" type="StaticBody2D" parent="Background"]
+position = Vector2(878, 1011)
+physics_material_override = SubResource("PhysicsMaterial_pw6ct")
+script = ExtResource("4_7xv0o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/InvisibleFloor"]
+position = Vector2(-20, -27)
+shape = SubResource("SegmentShape2D_8kf21")
+debug_color = Color(0.866494, 0.298229, 0.632443, 0.42)
+
+[node name="Timer" type="Timer" parent="Background"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Background"]
+position = Vector2(1948, -571)
+
+[node name="InvisibleLeftWall" type="StaticBody2D" parent="Background"]
+position = Vector2(-51, 49)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/InvisibleLeftWall"]
+position = Vector2(45, 280)
+shape = SubResource("SegmentShape2D_x01y0")

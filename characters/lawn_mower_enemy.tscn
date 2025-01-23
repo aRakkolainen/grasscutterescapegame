@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://bj8xe100n5skh"]
+
+[ext_resource type="Script" path="res://characters/LawnMower.cs" id="1_fbbnr"]
+[ext_resource type="Texture2D" uid="uid://dp0ueg4scc66c" path="res://arts/newEnemy0.png" id="2_0guri"]
+[ext_resource type="Texture2D" uid="uid://c46ksbmg14x4w" path="res://arts/newEnemy1.png" id="3_7akle"]
+[ext_resource type="Texture2D" uid="uid://j24syfddqwj6" path="res://arts/newEnemy2.png" id="4_sr1ks"]
+[ext_resource type="Texture2D" uid="uid://cthcm76dtl2xn" path="res://arts/newEnemy3.png" id="5_jfaie"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0uvq2"]
+size = Vector2(488, 326)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xkthn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0guri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7akle")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sr1ks")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jfaie")
+}],
+"loop": true,
+"name": &"followPlayer",
+"speed": 5.0
+}]
+
+[node name="LawnMowerEnemy" type="CharacterBody2D"]
+position = Vector2(207, 486)
+script = ExtResource("1_fbbnr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(192, 9)
+shape = SubResource("RectangleShape2D_0uvq2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(192, 9)
+scale = Vector2(0.991863, 1)
+sprite_frames = SubResource("SpriteFrames_xkthn")
+animation = &"followPlayer"
+frame_progress = 0.669082
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]

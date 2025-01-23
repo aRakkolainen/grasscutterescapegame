@@ -1,0 +1,79 @@
+[gd_scene load_steps=11 format=3 uid="uid://ddxhr26scbp7w"]
+
+[ext_resource type="Script" path="res://characters/Player.cs" id="1_ah87r"]
+[ext_resource type="Texture2D" uid="uid://c8m1nyceh3kpp" path="res://arts/newPlayer_0.png" id="2_s64yu"]
+[ext_resource type="Texture2D" uid="uid://bmdai7543asxg" path="res://arts/newPlayerLeft_1.png" id="3_1koav"]
+[ext_resource type="Texture2D" uid="uid://dyxapyo2c75vi" path="res://arts/newPlayerJump_0.png" id="3_77344"]
+[ext_resource type="Texture2D" uid="uid://c67keyn5setij" path="res://arts/newPlayerJump1.png" id="4_7lccy"]
+[ext_resource type="Texture2D" uid="uid://dfglmajp0j0my" path="res://arts/newPlayerLeft_2.png" id="4_ivok4"]
+[ext_resource type="Texture2D" uid="uid://1ui1v51uh0k7" path="res://arts/newPlayerRight_1.png" id="5_trl5k"]
+[ext_resource type="Texture2D" uid="uid://hotiy0npa5ro" path="res://arts/newPlayerRight_2.png" id="6_86aeo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dohm0"]
+size = Vector2(211, 145)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q4ap5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_s64yu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.5,
+"texture": ExtResource("3_77344")
+}, {
+"duration": 2.5,
+"texture": ExtResource("4_7lccy")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1koav")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ivok4")
+}],
+"loop": true,
+"name": &"move_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_trl5k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_86aeo")
+}],
+"loop": true,
+"name": &"move_right",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(180, 376)
+script = ExtResource("1_ah87r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(12.5, -11.5)
+shape = SubResource("RectangleShape2D_dohm0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(13.2519, 31.5875)
+scale = Vector2(0.477607, 0.529795)
+sprite_frames = SubResource("SpriteFrames_q4ap5")
+speed_scale = 1.5
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 2.00002)
+ignore_rotation = false
+limit_left = -300
+limit_top = -2000
+limit_bottom = 2000
+limit_smoothed = true

@@ -1,0 +1,153 @@
+[gd_scene load_steps=12 format=3 uid="uid://c30m40fri3n3n"]
+
+[ext_resource type="Script" path="res://scenes/Main.cs" id="1_7xne6"]
+[ext_resource type="Script" path="res://scenes/QuitGameButton.cs" id="2_1y8jp"]
+[ext_resource type="Texture2D" uid="uid://v7y711k82mk0" path="res://arts/background1.png" id="2_bg55j"]
+[ext_resource type="Script" path="res://scripts/InvisibleRoof.cs" id="3_yt5wq"]
+[ext_resource type="Script" path="res://scripts/InvisibleFloor.cs" id="4_0g7wr"]
+[ext_resource type="PackedScene" uid="uid://bj8xe100n5skh" path="res://characters/lawn_mower_enemy.tscn" id="6_o6oec"]
+[ext_resource type="Texture2D" uid="uid://b4a5uvrwi7j60" path="res://arts/background2.png" id="8_lq0hk"]
+[ext_resource type="PackedScene" uid="uid://ddxhr26scbp7w" path="res://characters/player.tscn" id="16_h072r"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_fbtan"]
+a = Vector2(7471, 2)
+b = Vector2(-855, 11)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kkaln"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_x4ml8"]
+a = Vector2(7, 670)
+b = Vector2(1, -325)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_7xne6")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 19564.0
+offset_bottom = 1080.0
+texture = ExtResource("2_bg55j")
+stretch_mode = 1
+
+[node name="QuitGameButton" type="Button" parent="Background"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 19.0
+offset_right = 169.0
+offset_bottom = 82.0
+theme_override_font_sizes/font_size = 40
+text = "Quit"
+script = ExtResource("2_1y8jp")
+
+[node name="TimeText" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 1299.0
+offset_top = 7.0
+offset_right = 1432.0
+offset_bottom = 76.0
+theme_override_font_sizes/font_size = 50
+text = "Time:"
+
+[node name="ScoreText" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 1577.0
+offset_top = 8.0
+offset_right = 1724.0
+offset_bottom = 77.0
+theme_override_font_sizes/font_size = 50
+text = "Score:"
+
+[node name="InvisibleRoof" type="StaticBody2D" parent="Background"]
+position = Vector2(363, -93)
+script = ExtResource("3_yt5wq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/InvisibleRoof"]
+position = Vector2(856, 202)
+shape = SubResource("SegmentShape2D_fbtan")
+debug_color = Color(0.760715, 0.30367, 0.837987, 0.42)
+
+[node name="InvisibleFloor" type="StaticBody2D" parent="Background"]
+position = Vector2(878, 1011)
+physics_material_override = SubResource("PhysicsMaterial_kkaln")
+script = ExtResource("4_0g7wr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/InvisibleFloor"]
+position = Vector2(-20, -27)
+shape = SubResource("SegmentShape2D_fbtan")
+debug_color = Color(0.866494, 0.298229, 0.632443, 0.42)
+
+[node name="Timer" type="Timer" parent="Background"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Background"]
+position = Vector2(1948, -571)
+
+[node name="InvisibleLeftWall" type="StaticBody2D" parent="Background"]
+position = Vector2(-51, 49)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/InvisibleLeftWall"]
+position = Vector2(45, 280)
+shape = SubResource("SegmentShape2D_x4ml8")
+
+[node name="NavigationLink2D" type="NavigationLink2D" parent="."]
+position = Vector2(45, 452)
+start_position = Vector2(5346, 751)
+end_position = Vector2(-967, 798)
+
+[node name="Background2" type="TextureRect" parent="."]
+offset_left = 19558.0
+offset_top = -1.0
+offset_right = 39122.0
+offset_bottom = 1079.0
+texture = ExtResource("8_lq0hk")
+stretch_mode = 1
+
+[node name="TimeText" type="Label" parent="Background2"]
+layout_mode = 0
+offset_left = 1299.0
+offset_top = 7.0
+offset_right = 1432.0
+offset_bottom = 76.0
+theme_override_font_sizes/font_size = 50
+text = "Time:"
+
+[node name="ScoreText" type="Label" parent="Background2"]
+layout_mode = 0
+offset_left = 1577.0
+offset_top = 8.0
+offset_right = 1724.0
+offset_bottom = 77.0
+theme_override_font_sizes/font_size = 50
+text = "Score:"
+
+[node name="InvisibleRoof" type="StaticBody2D" parent="Background2"]
+position = Vector2(363, -93)
+script = ExtResource("3_yt5wq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background2/InvisibleRoof"]
+position = Vector2(856, 202)
+shape = SubResource("SegmentShape2D_fbtan")
+debug_color = Color(0.760715, 0.30367, 0.837987, 0.42)
+
+[node name="InvisibleFloor" type="StaticBody2D" parent="Background2"]
+position = Vector2(878, 1011)
+physics_material_override = SubResource("PhysicsMaterial_kkaln")
+script = ExtResource("4_0g7wr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background2/InvisibleFloor"]
+position = Vector2(-20, -27)
+shape = SubResource("SegmentShape2D_fbtan")
+debug_color = Color(0.866494, 0.298229, 0.632443, 0.42)
+
+[node name="Timer" type="Timer" parent="Background2"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Background2"]
+position = Vector2(1948, -571)
+
+[node name="InvisibleLeftWall" type="StaticBody2D" parent="Background2"]
+position = Vector2(-51, 49)
+
+[node name="LawnMowerEnemy" parent="." instance=ExtResource("6_o6oec")]
+position = Vector2(-839, 551)
+
+[node name="Player" parent="." instance=ExtResource("16_h072r")]
+unique_name_in_owner = true
+position = Vector2(152, 589)
