@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cwqdp7g7wlob0"]
+[gd_scene load_steps=9 format=3 uid="uid://cwqdp7g7wlob0"]
 
 [ext_resource type="Texture2D" uid="uid://c0r1uchs3y2i2" path="res://arts/background3.png" id="1_vfrce"]
 [ext_resource type="Script" path="res://scenes/QuitGameButton.cs" id="2_qd02r"]
 [ext_resource type="Script" path="res://scripts/InvisibleRoof.cs" id="3_owsyd"]
 [ext_resource type="Script" path="res://scripts/InvisibleFloor.cs" id="4_088kn"]
+[ext_resource type="PackedScene" uid="uid://cwnmi68bi60kt" path="res://scenes/level_finish.tscn" id="5_46p3n"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_8kf21"]
 a = Vector2(7471, 2)
@@ -15,7 +16,7 @@ b = Vector2(-855, 11)
 a = Vector2(7, 670)
 b = Vector2(1, -325)
 
-[node name="level3" type="Node2D"]
+[node name="Level3" type="Node2D"]
 
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 19564.0
@@ -81,3 +82,6 @@ position = Vector2(-51, 49)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Background/InvisibleLeftWall"]
 position = Vector2(45, 280)
 shape = SubResource("SegmentShape2D_x01y0")
+
+[node name="Level_Finish" parent="." instance=ExtResource("5_46p3n")]
+position = Vector2(19533, 271)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c30m40fri3n3n"]
+[gd_scene load_steps=12 format=3 uid="uid://d0ihefakhjc35"]
 
 [ext_resource type="Script" path="res://scenes/Main.cs" id="1_7xne6"]
 [ext_resource type="Script" path="res://scenes/QuitGameButton.cs" id="2_1y8jp"]

@@ -6,6 +6,7 @@ public partial class Player : CharacterBody2D
 {
 	[Export]
     public int speed { get; set; } = 400;
+    public int currentLevel {get; set;}  = 1;
     private AnimatedSprite2D _animatedSprite;
 
     public Boolean playerIsAlive;
@@ -43,7 +44,17 @@ public partial class Player : CharacterBody2D
         
 
 
-        MoveAndCollide(Velocity * (float)delta);
+        var collision = MoveAndCollide(Velocity * (float)delta);
+        if (collision != null){
+            Node collisionObject = (Node) collision.GetCollider();
+            GD.Print("I collided with ", collisionObject.Name);
+            if (collisionObject.Name != null){
+                if (collisionObject.Name == "Level_Finish"){
+                    SwitchLevelScene();
+                }
+            }
+        }
+
     }
 
     public void Die(){
@@ -51,6 +62,14 @@ public partial class Player : CharacterBody2D
         playerIsAlive = false;
         _animatedSprite.Stop();
 
+    }
+
+    public void SwitchLevelScene(){
+        currentLevel++;
+        String sceneName = "res://scenes/level_";
+        sceneName += currentLevel;
+        sceneName += ".tscn";
+        GetTree().ChangeSceneToFile(sceneName);
     }
 	
 }

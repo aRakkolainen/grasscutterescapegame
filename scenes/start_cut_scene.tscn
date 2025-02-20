@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cscum3w45xfvc"]
+[gd_scene load_steps=47 format=3 uid="uid://cscum3w45xfvc"]
 
 [ext_resource type="Script" path="res://scenes/StartCutScene.cs" id="1_umaj6"]
 [ext_resource type="Texture2D" uid="uid://d28v0tvuqieto" path="res://arts/StartCutScene/start_cut_scene_frame_1.png" id="2_3nswo"]
@@ -43,6 +43,8 @@
 [ext_resource type="Texture2D" uid="uid://bc12a4b2rdn3l" path="res://arts/StartCutScene/start_cut_scene_frame_40.png" id="41_0ttat"]
 [ext_resource type="Texture2D" uid="uid://8ri0o1osaxan" path="res://arts/StartCutScene/start_cut_scene_frame_41.png" id="42_pivpj"]
 [ext_resource type="Texture2D" uid="uid://84jpl0a0mm5q" path="res://arts/StartCutScene/start_cut_scene_frame_42.png" id="43_1cg1t"]
+[ext_resource type="Texture2D" uid="uid://cft4fdo7ya8s2" path="res://arts/skip_button.png" id="44_cmw4n"]
+[ext_resource type="Script" path="res://scenes/SkipButton.cs" id="45_qfnss"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_75y5e"]
 animations = [{
@@ -196,3 +198,12 @@ script = ExtResource("1_umaj6")
 position = Vector2(583.125, 322)
 scale = Vector2(0.604036, 0.593056)
 sprite_frames = SubResource("SpriteFrames_75y5e")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 995.0
+offset_top = 516.0
+offset_right = 1149.0
+offset_bottom = 625.0
+icon = ExtResource("44_cmw4n")
+expand_icon = true
+script = ExtResource("45_qfnss")

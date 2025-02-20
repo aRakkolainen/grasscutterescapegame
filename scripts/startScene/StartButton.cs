@@ -17,7 +17,7 @@ public partial class StartButton : Button
     public override void _Pressed()
     {
         base._Pressed();
-		GetTree().ChangeSceneToFile("res://scenes/level_1.tscn");
+		GetTree().ChangeSceneToFile("res://scenes/start_cut_scene.tscn");
 
     }
 

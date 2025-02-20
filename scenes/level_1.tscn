@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d1v57r1je07ma"]
+[gd_scene load_steps=11 format=3 uid="uid://d1v57r1je07ma"]
 
 [ext_resource type="Texture2D" uid="uid://v7y711k82mk0" path="res://arts/background1.png" id="1_tj6i7"]
 [ext_resource type="Script" path="res://scenes/QuitGameButton.cs" id="2_vsa18"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scripts/InvisibleFloor.cs" id="4_tb3tl"]
 [ext_resource type="PackedScene" uid="uid://bj8xe100n5skh" path="res://characters/lawn_mower_enemy.tscn" id="5_wljwl"]
 [ext_resource type="PackedScene" uid="uid://ddxhr26scbp7w" path="res://characters/player.tscn" id="6_oghx0"]
+[ext_resource type="PackedScene" uid="uid://cwnmi68bi60kt" path="res://scenes/level_finish.tscn" id="7_5imsq"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_8kf21"]
 a = Vector2(7471, 2)
@@ -17,12 +18,15 @@ b = Vector2(-855, 11)
 a = Vector2(7, 670)
 b = Vector2(1, -325)
 
-[node name="level1" type="Node2D"]
+[node name="Level1" type="Node2D"]
+position = Vector2(0, 1)
 
 [node name="Background" type="TextureRect" parent="."]
+offset_left = 2.0
 offset_right = 19564.0
-offset_bottom = 1080.0
+offset_bottom = 1079.0
 texture = ExtResource("1_tj6i7")
+expand_mode = 3
 stretch_mode = 1
 
 [node name="QuitGameButton" type="Button" parent="Background"]
@@ -75,7 +79,7 @@ debug_color = Color(0.866494, 0.298229, 0.632443, 0.42)
 [node name="Timer" type="Timer" parent="Background"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Background"]
-position = Vector2(1948, -571)
+position = Vector2(2005, -158)
 
 [node name="InvisibleLeftWall" type="StaticBody2D" parent="Background"]
 position = Vector2(-51, 49)
@@ -85,8 +89,12 @@ position = Vector2(45, 280)
 shape = SubResource("SegmentShape2D_x01y0")
 
 [node name="LawnMowerEnemy" parent="." instance=ExtResource("5_wljwl")]
-position = Vector2(180, 487)
+position = Vector2(167, 528)
 
 [node name="Player" parent="." instance=ExtResource("6_oghx0")]
 unique_name_in_owner = true
-position = Vector2(1414, 450)
+position = Vector2(18741, 590)
+platform_wall_layers = 1
+
+[node name="Level_Finish" parent="." instance=ExtResource("7_5imsq")]
+position = Vector2(19537, 271)
