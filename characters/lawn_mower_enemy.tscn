@@ -42,6 +42,6 @@ position = Vector2(192, 9)
 scale = Vector2(0.991863, 1)
 sprite_frames = SubResource("SpriteFrames_xkthn")
 animation = &"followPlayer"
-frame_progress = 0.669082
+frame_progress = 0.148368
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]

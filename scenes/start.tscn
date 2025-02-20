@@ -1,19 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://bsn2s47wlsgfv"]
+[gd_scene load_steps=7 format=3 uid="uid://bsn2s47wlsgfv"]
 
-[ext_resource type="Texture2D" uid="uid://dys0y0s1rx0cj" path="res://arts/backgroundNew.png" id="1_xi2q6"]
+[ext_resource type="Texture2D" uid="uid://c5sr6yqmacwdv" path="res://arts/StartCutScene/start_cut_scene_frame_11.png" id="1_cxcxu"]
 [ext_resource type="Script" path="res://scripts/startScene/Label.cs" id="2_bx3rl"]
 [ext_resource type="Texture2D" uid="uid://c8m1nyceh3kpp" path="res://arts/newPlayer_0.png" id="3_dtmm0"]
 [ext_resource type="Texture2D" uid="uid://cthcm76dtl2xn" path="res://arts/newEnemy3.png" id="4_cpvmi"]
+[ext_resource type="Texture2D" uid="uid://cevws7y73jyi3" path="res://arts/start_button.png" id="5_7yjtd"]
 [ext_resource type="Script" path="res://scripts/startScene/StartButton.cs" id="5_fmffa"]
 
 [node name="startScene" type="Node2D"]
 
 [node name="Background" type="TextureRect" parent="."]
-offset_left = -20.0
-offset_top = -15.0
-offset_right = 1943.0
-offset_bottom = 1100.0
-texture = ExtResource("1_xi2q6")
+offset_left = 3.0
+offset_top = 4.0
+offset_right = 1152.0
+offset_bottom = 643.0
+texture = ExtResource("1_cxcxu")
+expand_mode = 2
 
 [node name="Label" type="Label" parent="Background"]
 layout_mode = 1
@@ -22,32 +24,37 @@ anchor_left = 0.523
 anchor_top = 0.456
 anchor_right = 0.523
 anchor_bottom = 0.456
-offset_left = -220.16
-offset_top = -178.48
-offset_right = 221.84
-offset_bottom = -90.48
+offset_left = -278.927
+offset_top = -117.384
+offset_right = 218.073
+offset_bottom = -18.384
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 64
+theme_override_colors/font_color = Color(3.85046e-07, 0.643089, 0.337385, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 72
 text = "DEFAULT TEXT"
 script = ExtResource("2_bx3rl")
 
 [node name="Player" type="TextureRect" parent="Background"]
 layout_mode = 0
-offset_left = 1388.0
-offset_top = 521.0
-offset_right = 1721.0
-offset_bottom = 814.0
+offset_left = -4.0
+offset_top = 410.0
+offset_right = 191.0
+offset_bottom = 583.0
 texture = ExtResource("3_dtmm0")
 expand_mode = 1
 
 [node name="Enemy" type="TextureRect" parent="Background"]
 layout_mode = 0
-offset_left = 108.0
-offset_top = 396.0
-offset_right = 689.0
-offset_bottom = 818.0
+offset_left = 644.0
+offset_top = 326.0
+offset_right = 1020.0
+offset_bottom = 581.0
 texture = ExtResource("4_cpvmi")
+expand_mode = 1
+flip_h = true
 
 [node name="TextureButton" type="TextureButton" parent="Background"]
 visible = false
@@ -63,11 +70,19 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -150.5
-offset_top = -134.5
-offset_right = 151.5
-offset_bottom = -26.5
+offset_top = -26.5
+offset_right = 157.5
+offset_bottom = 181.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 64
-text = "Start "
+icon = ExtResource("5_7yjtd")
 script = ExtResource("5_fmffa")
+
+[node name="ButtonTexture" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 564.0
+offset_top = 337.0
+offset_right = 564.0
+offset_bottom = 337.0
+scale = Vector2(2.31, 1.82)

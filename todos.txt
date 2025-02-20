@@ -1,0 +1,34 @@
+To-do list for this game: 
+- skip functionality for start cutscene
+- optimizing the frame duration of start cutscene
+- fixing scene changes to work in order: start, level_1, level_2, level_3 etc. and possibly some dying scene 
+- drawing death scene and potential ending scenes, more levels 
+- showing death scene when lawnmower touches player
+- adding boosts to the enemy: 
+    - if enemy touches rock obstacle, then its speed slows down for maybe 10-15s (needs to be tested when done) (maybe enemy can shout like Dammit! I hit a rock!)
+    - if enemy touches a gasoline tank (or battery if it is electric lawnmower but gas fits the story better), (draw asset for it), then it gets speed boost (maybe the enemy can possibly shout something then as well: Oh, gasoline! Now I will be faster!)
+- addings boosts to the player:
+    - speed boost (fertilizer asset because player is a piece of grass so fertilizer makes it grow faster => run faster)
+    - speed slows down (so the player is easier to catch by enemy, figure out what could be good asset for it)
+    - some other boosts if I can come up with something that fits the game
+    - some kind of shield for few seconds that player is safe from enemy (no idea how to actually implement but could be cool :D maybe it simply could be that enemy freezes for few seconds 
+    so if the situation is tough, the player has opportunity to save themself. This could be level 3 and up stuff when the enemy becomes much faster, technically there are
+    many possibilities to continue adding more and more levels but current target is three levels and it should be enough)
+- timer system ( 1 star: slowest time, 2 stars medium time, 3 stars: best time)
+(maybe player can earn stars based on how fast they can reach the end of each level? 
+My original idea was to make this endless runner game but maybe some sort of level system would be better for this project's scope)
+
+
+
+Some fuzzy ideas to add the game (fuzzy because not specific implementation in mind yet, but just ideation what could be added)
+- something for the player to collect:
+    - there could be some kind of point system, player needs to collect some objects 
+    so that player gets to select some boosts for the next level if they manage to collect enough of specific object 
+    (I don't yet know what those could be but this could add some fun factor for the game and more content)
+- multiplayer possibility that there can be two pieces of grass that need to escape the lawnmower 
+
+Eiku nii alkuperäinen idea oli se että miksi ruoho lähtee karkuun kun leikataan nurmikkoa 
+eli se juuri leikatun nurmikon tuoksu kertoo muulle ruoholle sen että kohta leikataan, 
+eli pelaajan tehtävä on päästä varoittamaan jotain toista nurmialuetta aiheesta että ruohonleikkuri on tulossa. (Tämä voi olla se loppuscene)
+
+ 
