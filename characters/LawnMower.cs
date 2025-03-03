@@ -2,29 +2,39 @@ using Godot;
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using System.Text;
 
 public partial class LawnMower : CharacterBody2D
 {
 	[Export]
-	private NavigationAgent2D _navigationAgent2D ;
-	public const float runSpeed = 0.5f;
+	public float runSpeed = 0.5f;
 	private AnimatedSprite2D _animatedSprite2D;
 	private CharacterBody2D player;
 
 	private int currentLevel = 1; 
 
+	private string currentScene;
+
+
 	public override void _Ready()
     {
 		_animatedSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
-		//scenePath = "/root/Level" + currentLevel;
-		//scenePath += "/Player";
-		player = GetNode<CharacterBody2D>("/root/Level1/Player");
+		StringBuilder builder = new StringBuilder();
+		builder.Append("/root/");
+		builder.Append(GetCurrentScene());
+		builder.Append("/Player");
+		GD.Print(builder.ToString());
+		player = GetNode<CharacterBody2D>("../Player");
     }
 
 	public override void _PhysicsProcess(double delta)
 	{
 		//player = GetNode<CharacterBody2D>(scenePath);
 		_animatedSprite2D.Play("followPlayer");
+		if(player == null) {
+			return;
+		}
+
 		Vector2 direction = player.Position - Position;
 		Velocity = direction * runSpeed;
         var collisionInfo = MoveAndCollide(Velocity * (float) delta);
@@ -44,5 +54,17 @@ public partial class LawnMower : CharacterBody2D
 		}
 	}
 
-	
+    private void OnSceneChanged(Node newScene)
+    {
+        GD.Print("Scene changed to:" + newScene.Name);
+    }
+
+	public void SetCurrentScene(string sceneName){
+		currentScene = sceneName;
+	}
+
+	public string GetCurrentScene(){
+		return currentScene;
+	}
+
 }

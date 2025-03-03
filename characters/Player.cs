@@ -9,7 +9,10 @@ public partial class Player : CharacterBody2D
     public int currentLevel {get; set;}  = 1;
     private AnimatedSprite2D _animatedSprite;
 
-    public Boolean playerIsAlive;
+    private string newSceneName; 
+    public bool playerIsAlive;
+
+    public string currentScene;
 
      public override void _Ready()
     {
@@ -61,15 +64,35 @@ public partial class Player : CharacterBody2D
         GD.Print("YOU DIED!");
         playerIsAlive = false;
         _animatedSprite.Stop();
-
     }
 
     public void SwitchLevelScene(){
+        string currentSceneName = GetTree().CurrentScene.Name;
+        string[] currentSceneParts = currentSceneName.Split("_");
+        int currentLevel = int.Parse(currentSceneParts[1]);
+        
+        if(currentLevel == 3) {
+            GD.Print("You won!");
+            newSceneName = "res://scenes/victory_scene.tscn";
+        }
         currentLevel++;
-        String sceneName = "res://scenes/level_";
-        sceneName += currentLevel;
-        sceneName += ".tscn";
-        GetTree().ChangeSceneToFile(sceneName);
+        newSceneName = "res://scenes/level_" + currentLevel + ".tscn";
+
+        GD.Print("You are at scene: " + currentSceneName);
+        GD.Print("You are switching to scene: " + newSceneName);
+        GetTree().ChangeSceneToFile(newSceneName);
     }
+
+    public int GetCurrentLevel(){
+        return currentLevel;
+    }
+
+    public void SetCurrentScene(string sceneName){
+		currentScene = sceneName;
+	}
+
+	public string GetCurrentScene(){
+		return currentScene;
+	}
 	
 }

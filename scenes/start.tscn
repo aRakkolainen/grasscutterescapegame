@@ -4,8 +4,8 @@
 [ext_resource type="Script" path="res://scripts/startScene/Label.cs" id="2_bx3rl"]
 [ext_resource type="Texture2D" uid="uid://c8m1nyceh3kpp" path="res://arts/newPlayer_0.png" id="3_dtmm0"]
 [ext_resource type="Texture2D" uid="uid://cthcm76dtl2xn" path="res://arts/newEnemy3.png" id="4_cpvmi"]
-[ext_resource type="Texture2D" uid="uid://cevws7y73jyi3" path="res://arts/start_button.png" id="5_7yjtd"]
 [ext_resource type="Script" path="res://scripts/startScene/StartButton.cs" id="5_fmffa"]
+[ext_resource type="Texture2D" uid="uid://duhuaparqqrqj" path="res://arts/start_btn.png" id="5_vbrr1"]
 
 [node name="startScene" type="Node2D"]
 
@@ -30,7 +30,7 @@ offset_right = 218.073
 offset_bottom = -18.384
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.0712053, 0.606114, 0.662647, 1)
+theme_override_colors/font_color = Color(0, 0.265463, 0.107065, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 72
@@ -69,14 +69,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -150.5
-offset_top = -26.5
-offset_right = 157.5
-offset_bottom = 181.5
+offset_left = -114.5
+offset_top = -39.5
+offset_right = 81.5
+offset_bottom = 74.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 64
-icon = ExtResource("5_7yjtd")
+icon = ExtResource("5_vbrr1")
+flat = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
 script = ExtResource("5_fmffa")
 
 [node name="ButtonTexture" type="TextureButton" parent="Background"]

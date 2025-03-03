@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://6bdcv6nkbdar"]
 
+[ext_resource type="Script" path="res://scenes/Level2.cs" id="1_l7712"]
 [ext_resource type="Texture2D" uid="uid://b4a5uvrwi7j60" path="res://arts/background2.png" id="1_qkfm6"]
 [ext_resource type="Script" path="res://scenes/QuitGameButton.cs" id="2_vcldv"]
 [ext_resource type="Script" path="res://scripts/InvisibleRoof.cs" id="3_8vcdh"]
 [ext_resource type="Script" path="res://scripts/InvisibleFloor.cs" id="4_7xv0o"]
-[ext_resource type="PackedScene" uid="uid://bj8xe100n5skh" path="res://characters/lawn_mower_enemy.tscn" id="5_d3eej"]
 [ext_resource type="PackedScene" uid="uid://ddxhr26scbp7w" path="res://characters/player.tscn" id="6_su1ue"]
 [ext_resource type="PackedScene" uid="uid://cwnmi68bi60kt" path="res://scenes/level_finish.tscn" id="7_ec87h"]
 
@@ -18,7 +18,8 @@ b = Vector2(-855, 11)
 a = Vector2(7, 670)
 b = Vector2(1, -325)
 
-[node name="Level2" type="Node2D"]
+[node name="Level_2" type="Node2D"]
+script = ExtResource("1_l7712")
 
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 19564.0
@@ -85,10 +86,9 @@ position = Vector2(-51, 49)
 position = Vector2(45, 280)
 shape = SubResource("SegmentShape2D_x01y0")
 
-[node name="LawnMowerEnemy" parent="." instance=ExtResource("5_d3eej")]
-
 [node name="Player" parent="." instance=ExtResource("6_su1ue")]
-position = Vector2(1010, 496)
+unique_name_in_owner = true
+position = Vector2(18173, 638)
 
 [node name="Level_Finish" parent="." instance=ExtResource("7_ec87h")]
 position = Vector2(19535, 273)
