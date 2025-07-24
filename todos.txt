@@ -1,12 +1,12 @@
 To-do list for this game: 
-- skip functionality for start cutscene
+- skip functionality for start cutscene (Done)
 - optimizing the frame duration of start cutscene
-- fixing scene changes to work in order: start, level_1, level_2, level_3 etc. and possibly some dying scene 
+- fixing scene changes to work in order: start, level_1, level_2, level_3 etc. and possibly some dying scene (Done but death scene graphic not done)
 - drawing death scene and potential ending scenes, more levels 
-- showing death scene when lawnmower touches player
+- showing death scene when lawnmower touches player (code done, graphic missing)
 - adding boosts to the enemy: 
     - if enemy touches rock obstacle, then its speed slows down for maybe 10-15s (needs to be tested when done) (maybe enemy can shout like Dammit! I hit a rock!)
-    - if enemy touches a gasoline tank (or battery if it is electric lawnmower but gas fits the story better), (draw asset for it), then it gets speed boost (maybe the enemy can possibly shout something then as well: Oh, gasoline! Now I will be faster!)
+    - if enemy touches a gasoline tank (or battery if it is electric lawnmower but gas fits the story better), (draw asset for it), then it gets speed boost (maybe the enemy can possibly shout something then as well: Oh, gasoline! Now I will be faster! => I need to draw asset for those as well!)
 - addings boosts to the player:
     - speed boost (fertilizer asset because player is a piece of grass so fertilizer makes it grow faster => run faster)
     - speed slows down (so the player is easier to catch by enemy, figure out what could be good asset for it)
