@@ -11,4 +11,4 @@ This project is not yet runnable.
 - learn godot4 game engine and C#
 - learn digital drawing with Krita
 ## Project status
-As previously mentioned, this project is fully for hobby purposes. The todos.txt file includes the ideas I am planning to implement on this project. Currently, project has some parts of main game play and starting cutscene.
+As previously mentioned, this project is fully for hobby purposes. The todos.txt file includes the ideas I am planning to implement on this project. Currently, project has some parts of main game play and starting cutscene. It is not yet close to be neat and perfect playable game, but I still want to demonstrate my honest learning journey.
